@@ -13,9 +13,9 @@ function App() {
     <>
     <div>
       <WelcomeMessage />
-      <Header/>
-      <MainContent/>
-      <Footer/>
+      <Header />
+      <MainContent />
+      <Footer />
     </div>
       
     </>
