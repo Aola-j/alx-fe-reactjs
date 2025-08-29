@@ -21,9 +21,9 @@ function App() {
       <UserProfile 
       name="Alice" 
       age="25" 
-      bio="A passionate developer who loves React and exploring new technologies." />
+      bio="Loves hiking and photography" />
     </div>
-    
+
     </>
   )
 }
