@@ -19,16 +19,17 @@ function App() {
       <Header />
       <MainContent />
 
-       <UserContext.Provider value={userData}>
-      <ProfilePage />
-    </UserContext.Provider>
+      <UserContext.Provider value={userData}>
+         <ProfilePage />
+      </UserContext.Provider>
 
       <Footer />
 
-      <UserProfile 
+      <UserProfile
       name="Alice" 
       age="25" 
       bio="Loves hiking and photography" />
+
     </div>
 
     </>

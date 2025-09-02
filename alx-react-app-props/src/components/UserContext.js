@@ -1,3 +1,3 @@
-const UserContext = createContext();
+React.createContext()
 
 export default UserContext;
