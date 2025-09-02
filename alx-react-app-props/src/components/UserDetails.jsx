@@ -1,4 +1,4 @@
-import UserContext from "../UserContext";
+import UserContext from "../UserContext.js";
 
 function UserDetails() {
   const userData = useContext(UserContext);
