@@ -7,6 +7,7 @@ function Navbar() {
     alignItems: "center",
     background: "#333",
     padding: "15px",
+    backgroundColor: "#333"
   };
 
   const linkStyle = {
