@@ -18,11 +18,8 @@ function Search ({ onSearch }) {
      
     try {
         const data = await fetchUserData(username)
-        if(DataTransfer.message === "Not found") {
-            setError(true)
-        } else {
-            setUser(data)
-        }
+        setUser(data)
+        
     } catch {
         setError(true)
     } finally {
