@@ -84,7 +84,7 @@ function Search () {
 
          <div className="mt-6">
         {loading && <p className="text-gray-600">Loading...</p>}
-        {error && <p className="text-red-600">Looks like we cant find any user</p>}
+        {error && <p className="text-red-600">Looks like we cant find the user</p>}
         {users.length > 0 && (
           <ul className="space-y-4">
             {users.map((u) => (
@@ -95,7 +95,7 @@ function Search () {
                 <img
                   src={u.avatar_url}
                   alt={u.login}
-                  className="w-12 h-12 rounded-full"
+                  className="w-5 h-5 rounded-full"
                 />
                 <div>
                   <p className="font-semibold">{u.login}</p>
