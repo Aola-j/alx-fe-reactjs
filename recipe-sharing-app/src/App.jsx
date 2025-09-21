@@ -3,8 +3,8 @@ import AddRecipeForm from "./components/AddRecipeForm";
 import {  Routes, Route, useParams } from 'react-router-dom'
 import RecipeDetails from './components/RecipeDetails'
 import SearchBar from './components/SearchBar'
-import FavoritesList from './FavoritesList'
-import RecommendationsList from './RecommendationsList'
+import FavoritesList from './components/FavoritesList'
+import RecommendationsList from './components/RecommendationsList'
 
 const router = 'Router'
 
@@ -35,7 +35,6 @@ const Home = () => (
   </div>
 )
 
-import { useParams } from 'react-router-dom'
 const RecipeDetailsWrapper = () => {
   const { id } = useParams()
   return <RecipeDetails recipeId={id} />

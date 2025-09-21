@@ -2,17 +2,23 @@ import { useRecipeStore } from './recipeStore'
 
 const FavoritesList = () => {
   // Map favorite IDs to full recipe objects
-  const favorites = useRecipeStore((state) =>
-    state.favorites.map((id) => state.recipes.find((recipe) => recipe.id === id))
-  )
+  const FavoritesList = () => {
+  const { favorites, recipes } = useRecipeStore(
+    (state) => ({ favorites: state.favorites, recipes: state.recipes }),
+    shallow
+  );
+
+  const favoriteRecipes = favorites.map((id) =>
+    recipes.find((recipe) => recipe.id === id)
+  );
 
   return (
     <div>
       <h2>My Favorites</h2>
-      {favorites.length === 0 ? (
+      {favoriteRecipes.length === 0 ? (
         <p>No favorites yet.</p>
       ) : (
-        favorites.map(
+        favoriteRecipes.map(
           (recipe) =>
             recipe && (
               <div key={recipe.id}>
@@ -24,6 +30,7 @@ const FavoritesList = () => {
       )}
     </div>
   )
+  }
 }
 
 export default FavoritesList
