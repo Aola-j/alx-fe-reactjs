@@ -25,3 +25,8 @@ dist-ssr
 
 # gitignore
 .env
+
+
+#Another one
+
+.password
