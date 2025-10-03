@@ -1,34 +1,32 @@
 import { useState, useEffect } from "react";
+import recipeData from "../data.json"; // adjust the path if needed
 
 function HomePage() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then((data) => setRecipes(data))
-      .catch((err) => console.error("Error loading data:", err));
+    // Set the data directly from the imported file
+    setRecipes(recipeData);
   }, []);
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6 text-center">🍴 Recipes</h1>
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {recipes.map((recipe, index) => (
+      <h1 className="text-2xl font-bold mb-6 text-center">Recipe List</h1>
+
+      {/* Responsive grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {recipes.map((recipe) => (
           <div
-            key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-xl transition duration-300"
+            key={recipe.id}
+            className="bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition p-4"
           >
             <img
               src={recipe.image}
-              alt={recipe.name}
-              className="w-full h-40 object-cover"
+              alt={recipe.title}
+              className="w-full h-40 object-cover rounded"
             />
-            <div className="p-4">
-              <h2 className="text-lg font-semibold mb-2">{recipe.name}</h2>
-              <p className="text-gray-600 mb-3">{recipe.description}</p>
-              <p className="text-sm text-gray-500">⏱ {recipe.time}</p>
-            </div>
+            <h2 className="text-lg font-semibold mt-2">{recipe.title}</h2>
+            <p className="text-gray-600 text-sm mt-1">{recipe.summary}</p>
           </div>
         ))}
       </div>
