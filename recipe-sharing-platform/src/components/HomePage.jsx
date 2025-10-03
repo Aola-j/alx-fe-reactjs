@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import recipeData from "../data.json"; // adjust the path if needed
+import { Link } from "react-router-dom";
+
 
 function HomePage() {
   const [recipes, setRecipes] = useState([]);
@@ -20,6 +22,9 @@ function HomePage() {
             key={recipe.id}
             className="bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition p-4"
           >
+            <Link to={`/recipe/${recipe.id}`}>
+  <h2 className="text-lg font-semibold mt-2 hover:text-blue-600">{recipe.title}</h2>
+</Link>
             <img
               src={recipe.image}
               alt={recipe.title}
