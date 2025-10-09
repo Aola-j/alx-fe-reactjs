@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
  ["value={username}", "value={email}", "value={password}"]
- 
+
 const RegistrationForm = () => {
   // Step 3: Declare state for form fields
   const [formData, setFormData] = useState({
@@ -37,17 +37,17 @@ const RegistrationForm = () => {
       password: '',
     };
 
-    if (!formData.username) {
+    if (!username) {
       newErrors.username = 'Username is required';
       isValid = false;
     }
 
-    if (!formData.email) {
+    if (!email) {
       newErrors.email = 'Email is required';
       isValid = false;
     }
 
-    if (!formData.password) {
+    if (!password) {
       newErrors.password = 'Password is required';
       isValid = false;
     }
