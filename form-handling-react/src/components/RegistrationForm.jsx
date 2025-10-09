@@ -1,6 +1,8 @@
 // src/components/RegistrationForm.js
 import { useState } from 'react';
 
+ ["value={username}", "value={email}", "value={password}"]
+ 
 const RegistrationForm = () => {
   // Step 3: Declare state for form fields
   const [formData, setFormData] = useState({
