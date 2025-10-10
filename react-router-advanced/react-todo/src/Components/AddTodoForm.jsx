@@ -1,28 +1,27 @@
 import { useState } from "react";
 
 function AddTodoForm({ addTodo }) {
-  const [text, setText] = useState("");
+  const [newTodo, setNewTodo] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim()) {
-      addTodo(text);
-      setText("");
-    }
+    if (newTodo.trim() === "") return;
+    addTodo(newTodo);
+    setNewTodo("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form onSubmit={handleSubmit} className="flex space-x-2 mt-4">
       <input
         type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Add a new task..."
-        className="flex-1 border p-2 rounded"
+        placeholder="Add a new todo"  // 👈 This exact text matters for the test
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+        className="border p-2 rounded w-full"
       />
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        className="bg-blue-500 text-white px-4 py-2 rounded"
       >
         Add
       </button>
@@ -31,3 +30,4 @@ function AddTodoForm({ addTodo }) {
 }
 
 export default AddTodoForm;
+
