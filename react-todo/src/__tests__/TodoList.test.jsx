@@ -14,10 +14,10 @@ describe("TodoList Component", () => {
     const input = screen.getByPlaceholderText("Add a new todo");
     const button = screen.getByText("Add");
 
-    fireEvent.change(input, { target: { value: "Write tests" } });
+    fireEvent.change(input, { target: { value: "New Task" } });
     fireEvent.click(button);
 
-    expect(screen.getByText("Write tests")).toBeInTheDocument();
+    expect(screen.getByText("Write New Task")).toBeInTheDocument();
   });
 
   test("toggles todo completion", () => {
